@@ -5,14 +5,17 @@ export const getPosts = async () => {
     cache: 'no-store',
   });
 
+  // await new Promise((resolve) => setTimeout(resolve, 2000));
+
   return res.json();
 };
 
 export const getPost = async (id) => {
-  // await new Promise((resolve) => setTimeout(resolve, 5000));
   const res = await fetch(`${BASE_URL}/posts/${id}`, {
     cache: 'no-store',
   });
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   return res.json();
 };
