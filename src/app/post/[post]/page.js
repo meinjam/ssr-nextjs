@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
 
-export async function generateMetadata({ params, searchParams }, parent) {
+export async function generateMetadata({ params }) {
   const data = await getPost(params?.post);
   const thumb = await getImage(data?.id);
 

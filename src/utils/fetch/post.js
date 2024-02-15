@@ -9,6 +9,7 @@ export const getPosts = async () => {
 };
 
 export const getPost = async (id) => {
+  // await new Promise((resolve) => setTimeout(resolve, 5000));
   const res = await fetch(`${BASE_URL}/posts/${id}`, {
     cache: 'no-store',
   });
