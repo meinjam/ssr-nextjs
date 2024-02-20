@@ -11,15 +11,12 @@ const initialState = {
 
 const AddTodo = () => {
   const [state, formAction] = useFormState(postTodo, initialState);
-  const { pending } = useFormStatus();
 
   return (
     <form action={formAction}>
       <div className='input-group mt-3'>
         <input name='task' type='text' className='form-control form-control-lg' placeholder='Please enter todo' />
-        <button className='btn btn-success' type='submit' id='button-addon1' disabled={pending}>
-          {pending ? 'Adding...' : 'Add Todo'}
-        </button>
+        <SubmitButton />
       </div>
 
       {state?.message !== '' && (
@@ -32,3 +29,13 @@ const AddTodo = () => {
 };
 
 export default AddTodo;
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <button className='btn btn-success' type='submit' id='button-addon1' disabled={pending}>
+      {pending ? 'Adding...' : 'Add Todo'}
+    </button>
+  );
+}

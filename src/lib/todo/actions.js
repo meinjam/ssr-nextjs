@@ -12,8 +12,6 @@ export const getAllTodo = async () => {
 };
 
 export const postTodo = async (prevState, formData) => {
-  //   await new Promise((resolve) => setTimeout(resolve, 5000));
-
   const { data, error } = await supabase
     .from('todos')
     .insert([
@@ -22,6 +20,8 @@ export const postTodo = async (prevState, formData) => {
       },
     ])
     .select();
+
+  await new Promise((resolve) => setTimeout(resolve, 5000));
 
   revalidatePath('/todo');
 
