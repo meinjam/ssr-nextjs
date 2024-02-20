@@ -32,9 +32,9 @@ export const postTodo = async (prevState, formData) => {
 };
 
 export const deleteTodo = async (prevState, formData) => {
-  //   await new Promise((resolve) => setTimeout(resolve, 2000));
-
   const { error } = await supabase.from('todos').delete().eq('id', formData.get('id'));
+
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 
   revalidatePath('/todo');
 
