@@ -1,7 +1,9 @@
 import MainNavbar from '@/components/MainNavbar.Component';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { Inter } from 'next/font/google';
+import { ToastContainer } from 'react-toastify';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,6 +18,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <MainNavbar />
         {children}
+        <ToastContainer />
       </body>
     </html>
   );

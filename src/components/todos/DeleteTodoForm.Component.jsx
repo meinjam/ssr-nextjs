@@ -11,10 +11,6 @@ const initialState = {
 function DeleteButton() {
   const { pending } = useFormStatus();
 
-  useEffect(() => {
-    console.log(pending);
-  }, [pending]);
-
   return (
     <button type='submit' disabled={pending} className='btn p-0'>
       {pending ? <LoadingIcon /> : <TrashIcon />}
@@ -29,7 +25,6 @@ const DeleteTodoForm = ({ todo }) => {
     <form action={formAction}>
       <input type='hidden' name='id' value={todo?.id} />
       <input type='hidden' name='task' value={todo?.task} />
-
       <DeleteButton />
     </form>
   );

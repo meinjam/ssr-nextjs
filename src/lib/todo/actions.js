@@ -28,16 +28,15 @@ export const postTodo = async (prevState, formData) => {
   //   console.log(data);
   //   console.log(error);
 
-  return { data, error, message: 'Todo added successfully.' };
+  return { message: 'Todo added successfully.' };
 };
 
 export const deleteTodo = async (prevState, formData) => {
   const { error } = await supabase.from('todos').delete().eq('id', formData.get('id'));
 
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  //   await new Promise((resolve) => setTimeout(resolve, 2000));
 
   revalidatePath('/todo');
 
   return { message: `Todo deleted successfully.` };
-  //   return { error, prevState: { message: `Deleted todo ${formData?.task}` } };
 };

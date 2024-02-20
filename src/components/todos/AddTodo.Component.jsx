@@ -19,11 +19,13 @@ const AddTodo = () => {
         <SubmitButton />
       </div>
 
+      {/* {JSON.stringify(state)}
+
       {state?.message !== '' && (
         <Alert variant='success' className='mt-4' dismissible>
           {state?.message}
         </Alert>
-      )}
+      )} */}
     </form>
   );
 };
