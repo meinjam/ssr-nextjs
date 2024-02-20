@@ -19,12 +19,12 @@ const MainNavbar = () => {
             <Link className='nav-link' href='/'>
               Home
             </Link>
-            <Link className='nav-link' href='/about'>
-              About
+            <Link className='nav-link' href='/todo'>
+              Todo
             </Link>
-            <Link className='nav-link' href='/contact'>
+            {/* <Link className='nav-link' href='/contact'>
               Contact
-            </Link>
+            </Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
