@@ -32,7 +32,7 @@ const DeleteTodoForm = ({ todo }) => {
 
 export default DeleteTodoForm;
 
-const TrashIcon = () => (
+export const TrashIcon = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     className=''
@@ -55,7 +55,7 @@ const TrashIcon = () => (
   </svg>
 );
 
-const LoadingIcon = () => (
+export const LoadingIcon = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     className='loading-icon'
