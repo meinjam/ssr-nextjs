@@ -22,9 +22,9 @@ const MainNavbar = () => {
             <Link className='nav-link' href='/todo'>
               Todo
             </Link>
-            {/* <Link className='nav-link' href='/contact'>
-              Contact
-            </Link> */}
+            <Link className='nav-link' href='/ticket'>
+              Ticket
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
