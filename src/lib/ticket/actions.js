@@ -49,6 +49,25 @@ export const postTicket = async (prevState, formData) => {
   return redirect(`/ticket`);
 };
 
+export const updateTicket = async (prevState, formData) => {
+  const updateData = {
+    title: formData.get('title'),
+    description: formData.get('description'),
+    active: formData.get('active') ? true : false,
+  };
+
+  await fetch(`${BASE_URL}/api/ticket/${formData.get('slug')}`, {
+    method: 'PUT',
+    headers: {
+      Accept: 'application.json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(updateData),
+  });
+
+  redirect(`/ticket`);
+};
+
 export const deleteTicket = async (prevState, formData) => {
   const slug = formData.get('slug');
 
